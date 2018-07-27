@@ -52,24 +52,25 @@
 
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <div *ngIf="(posts.length != null)">
-          <table class="table ">
+      <div *ngIf="(posts != null)">
+          <table class="table">
             <thead>
                 <tr>
-                  <th class="table-info" style="width: 15%">ID</th>
-                  <th class="table-info" style="width: 20%">Name</th>
-                  <th class="table-info" style="width: 15%">Species</th>
-                  <th class="table-info" style="width: 30%">Breed</th>
                   <th class="table-info">Image</th>
+                  <th class="table-info">Info</th>
                 </tr>
             </thead>
             <tbody>
               <tr *ngFor="let post of posts">
-                <td>{{ post.animalID }}</td>
-                <td>{{ post.animalName }}</td>
-                <td>{{ post.animalSpecies }}</td>
-                <td>{{ post.animalBreed }}</td>
-                <td><img src="{{ post.animalThumbnailUrl }}" class="img-thumbnail img-responsive"></td>
+                <td style="text-align: center;"><img src="{{ post.animalThumbnailUrl }}" class="img-thumbnail img-responsive"></td>
+                <td>
+                  <p>
+                    <strong>ID:</strong> {{ post.animalID }} &nbsp; <strong>Species:</strong> {{ post.animalSpecies}} <br>
+                    <strong>Name:</strong> {{ post.animalName }} <br>
+                    <strong>Breed:</strong> {{ post.animalBreed }} <br>
+                  </p>
+                
+                </td>
               </tr>
             </tbody>
           </table>
